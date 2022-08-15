@@ -5,7 +5,7 @@ import ResetPassword from './screens/ResetPassword';
 import Home from './screens/Home';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+import ManageAccount from './screens/ManageAccount';
 
 
 
@@ -30,6 +30,10 @@ export default function App() {
         name="ResetPassword"
         component={ResetPassword}
         options={{headerShown : false}} />
+      <Stack.Screen
+        name="ManageAccount"
+        component={ManageAccount}
+        options={{headerShown: false}} />  
       <Stack.Screen 
         name="Home"
         component={Home}

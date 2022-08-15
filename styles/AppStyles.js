@@ -2,25 +2,59 @@ import { StyleSheet } from 'react-native';
 
 
 export default styles = StyleSheet.create({
-    container: {
+    imageContainer: {
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center'
      
     },
+    container:{
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 16
+    },
+    noPadding: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: "red"
+    },
     rowContainer: {
         
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
+        alignSelf: "stretch",
         marginVerical: 5
+      
+    },
+    fillSpace: {
+      flex: 1
+    },
+
+    stretch: {
+      alignSelf: "stretch"
+    },
+    rightAligned: {
+      
+      justifyContent: "flex-end"
+      
     },
     topMargin: {
       marginTop: 16
     },
     bottomMargin: {
       marginBottom: 16
+    },
+    rightMargin: {
+        marginRight: 16
+    },
+    leftMargin: {
+      marginLeft: 16
     },
 
     backgroundCover: {
@@ -37,11 +71,15 @@ export default styles = StyleSheet.create({
         padding: 16,
         fontWeight: "bold"
     },
+    darkTextInput: {
+      borderBottomColor: "#000000"
+    },
     errorText: {
       color: "#ff0000"
     },
     header: {
-        fontSize: 20
+        fontSize: 20,
+        alignSelf: 'center'
     },
     textInput: {
       alignSelf: 'stretch',
