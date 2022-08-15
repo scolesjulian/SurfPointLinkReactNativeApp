@@ -8,7 +8,7 @@ import React from 'react';
 import AddToDoModal from '../components/AddToDoModal';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 
-export default function Home({ navigation }) {
+export default function ToDo({ navigation }) {
   let [modalVisible, setModalVisible] = React.useState(false);
   let [isLoading, setIsLoading] = React.useState(true);
   let [isRefreshing, setIsRefreshing] = React.useState(false);
@@ -59,7 +59,7 @@ export default function Home({ navigation }) {
             onPress={(isChecked) => { checkToDoItem(item, isChecked)}}
           />
         </View>
-        <InlineTextButton text="Delete" color="#258ea6" onPress={() => deleteToDo(item.id)} />
+        <InlineTextButton text="Delete" color="#bd1e1e" onPress={() => deleteToDo(item.id)} />
       </View>
     );
   }
@@ -83,14 +83,21 @@ export default function Home({ navigation }) {
       <View>
         {isLoading ? <ActivityIndicator size="large" /> : showToDoList() }
         <Button 
-          title="Add ToDo" 
+          title="Add Link" 
           onPress={() => setModalVisible(true)} 
-          color="#fb4d3d" />
+          color="#2e86ab" />
       </View>
     );
   };
 
-  
+  let showSendVerificationEmail = () => {
+    return (
+      <View>
+        <Text>Please verify your email to use Surf Point Link</Text>
+        <Button title="Send Verification Email" onPress={() => sendEmailVerification(auth.currentUser)} />
+      </View>
+    );
+  };
 
   let addToDo = async (todo) => {
     let toDoToSave = {
@@ -109,7 +116,8 @@ export default function Home({ navigation }) {
   };
   
   return (
-    <SafeAreaView >
+    
+    <SafeAreaView>
       <View style={[AppStyles.rowContainer, AppStyles.rightAligned, AppStyles.rightMargin, AppStyles.topMargin]}>
         <InlineTextButton text="Manage Account" color="#258ea6" onPress={() => navigation.navigate("ManageAccount")}/>
       </View>
@@ -123,7 +131,7 @@ export default function Home({ navigation }) {
           addToDo={addToDo} />
       </Modal>
       <Text style={AppStyles.header}>ToDo</Text>
-      
+      {auth.currentUser.emailVerified ? showContent() : showSendVerificationEmail()}
     </SafeAreaView>
   )
 }

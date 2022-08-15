@@ -99,7 +99,8 @@ export default styles = StyleSheet.create({
         opacity: 0.6
     },
     buttonLogin: {
-      borderRadius: 50
+      borderRadius: 50,
+      color: "#000000",
     }
 
   });
