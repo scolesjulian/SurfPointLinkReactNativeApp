@@ -73,7 +73,7 @@ export default function Login({ navigation }) {
           <Text style={AppStyles.lightText}>Forgotten your password? </Text>
           <InlineTextButton text="Reset" onPress={() => navigation.navigate("ResetPassword")} />
         </View>
-        <Button title="Login" onPress={login} color="#f5e2c8" />
+        <Button title="Login" onPress={login} color="#f7b267" />
       </KeyboardAvoidingView>
     </ImageBackground>
   );

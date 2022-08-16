@@ -67,7 +67,7 @@ export default styles = StyleSheet.create({
 
     },
     lightText: {
-        color: '#457b9d',
+        color: 'white',
         padding: 16,
         fontWeight: "bold"
     },
@@ -79,16 +79,19 @@ export default styles = StyleSheet.create({
     },
     header: {
         fontSize: 20,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        fontWeight: 'bold'
     },
     textInput: {
       alignSelf: 'stretch',
       padding: 8,
       borderBottomWidth: 2,
-      marginVertical: 8  
+      marginVertical: 8,
+      color: 'black', 
     },
     lightTextInput: {
-      borderBottomColor: "#ffffff"
+      borderBottomColor: "#ffffff",
+      color: 'white',
     },
     
     inlineTextButton: {
@@ -101,6 +104,6 @@ export default styles = StyleSheet.create({
     buttonLogin: {
       borderRadius: 50,
       color: "#000000",
-    }
-
+    },
+   
   });

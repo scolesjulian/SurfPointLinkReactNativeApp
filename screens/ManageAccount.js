@@ -1,11 +1,14 @@
-import { Button, View, TextInput, Text } from 'react-native';
+import { Button, View, TextInput, Text, ImageBackground, KeyboardAvoidingView, Image } from 'react-native';
 import React from 'react';
 import AppStyles from '../styles/AppStyles';
+import Logo from '../assets/Logo_1.png';
 import { auth, db } from "../firebase";
 import { collection, query, where, getDocs, writeBatch } from "firebase/firestore"; 
 import { signOut, updatePassword, signInWithEmailAndPassword, deleteUser } from 'firebase/auth';
 
 export default function ManageAccount({ navigation }) {
+  const background = require("../assets/background.jpg");
+
   let [newPassword, setNewPassword] = React.useState("");
   let [currentPassword, setCurrentPassword] = React.useState("");
   let [errorMessage, setErrorMessage] = React.useState("");
@@ -63,24 +66,38 @@ export default function ManageAccount({ navigation }) {
   };
 
   return (
-    <View style={AppStyles.container}>
+    <ImageBackground style={AppStyles.imageContainer} source={background}>
+    <Image source={Logo} style={{width: 100, height: 100, marginBottom: 15, maxWidth: 300, maxHeight: 200}} resizeMode="contain" />
+    
+    <Text style={{fontSize: 24, fontWeight: "bold"}}>
+         Manage Account
+        </Text>
+    <KeyboardAvoidingView 
+        style={AppStyles.backgroundCover} 
+        behavior={Platform.OS === "ios" ? "padding" : null}
+        keyboardVerticalOffset={60}>
       <Text style={AppStyles.errorText}>{errorMessage}</Text>
       <TextInput 
-          style={[AppStyles.textInput, AppStyles.darkTextInput]} 
+         style={[AppStyles.textInput, AppStyles.lightTextInput, AppStyles.lightText]} 
           placeholder='Current Password'
+          placeholderTextColor="#BEBEBE"
           value={currentPassword}
           secureTextEntry={true}
           onChangeText={setCurrentPassword} />
       <TextInput 
-          style={[AppStyles.textInput, AppStyles.darkTextInput]} 
+          style={[AppStyles.textInput, AppStyles.lightTextInput, AppStyles.lightText]}
           placeholder='New Password'
+          placeholderTextColor="#BEBEBE"
           value={newPassword}
           secureTextEntry={true}
           onChangeText={setNewPassword} />
-      <Button title="Update Password" onPress={updateUserPassword} />
-      <Button title="Delete User" onPress={deleteUserAndToDos} />
+      <Button title="Update Password" color="#6BCB77" onPress={updateUserPassword} />
+      <Button title="Delete User" color="#FF6B6B" onPress={deleteUserAndToDos} />
       <Button title="Logout" onPress={logout} />
-      <Button title="Back to ToDos" onPress={() => navigation.pop()} />
-    </View>
+      <Button title="Back to Links" onPress={() => navigation.pop()} />
+      </KeyboardAvoidingView>
+    
+    
+    </ImageBackground>
   );
 }

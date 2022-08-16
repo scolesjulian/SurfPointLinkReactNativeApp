@@ -1,6 +1,7 @@
-import { View, Button, Text, Modal, SafeAreaView, ActivityIndicator, FlatList } from 'react-native';
+import { View, Button, Text, Modal,Image, SafeAreaView, ActivityIndicator, FlatList } from 'react-native';
 import InlineTextButton from '../components/InlineTextButton';
 import AppStyles from '../styles/AppStyles';
+import Logo from '../assets/Logo_1.png';
 import { auth, db } from "../firebase";
 import { collection, addDoc, query, where, getDocs, deleteDoc, doc, setDoc } from "firebase/firestore"; 
 import { sendEmailVerification } from 'firebase/auth';
@@ -93,7 +94,7 @@ export default function ToDo({ navigation }) {
   let showSendVerificationEmail = () => {
     return (
       <View>
-        <Text>Please verify your email to use Surf Point Link</Text>
+        <Text>Please verify your email to use ToDo</Text>
         <Button title="Send Verification Email" onPress={() => sendEmailVerification(auth.currentUser)} />
       </View>
     );
@@ -116,7 +117,6 @@ export default function ToDo({ navigation }) {
   };
   
   return (
-    
     <SafeAreaView>
       <View style={[AppStyles.rowContainer, AppStyles.rightAligned, AppStyles.rightMargin, AppStyles.topMargin]}>
         <InlineTextButton text="Manage Account" color="#258ea6" onPress={() => navigation.navigate("ManageAccount")}/>
@@ -130,8 +130,9 @@ export default function ToDo({ navigation }) {
           onClose={() => setModalVisible(false)}
           addToDo={addToDo} />
       </Modal>
-      <Text style={AppStyles.header}>ToDo</Text>
+      <Text style={AppStyles.header}>Links</Text>
       {auth.currentUser.emailVerified ? showContent() : showSendVerificationEmail()}
+      <Image source={Logo} style={{width: 350, height: 800, marginBottom: 15, maxWidth: 400, maxHeight: 500, justifyContent: 'center'}} resizeMode="contain" />
     </SafeAreaView>
   )
 }
