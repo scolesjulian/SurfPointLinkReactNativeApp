@@ -6,6 +6,7 @@ import React from 'react';
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
+
 export default function Login({ navigation }) {
   const background = require("../assets/background.jpg");
 

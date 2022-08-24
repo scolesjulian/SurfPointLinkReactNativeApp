@@ -45,7 +45,8 @@ export default styles = StyleSheet.create({
       
     },
     topMargin: {
-      marginTop: 16
+      marginTop: 16,
+      height: 50
     },
     bottomMargin: {
       marginBottom: 16

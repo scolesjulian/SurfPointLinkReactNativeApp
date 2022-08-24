@@ -130,6 +130,8 @@ export default function ToDo({ navigation }) {
           onClose={() => setModalVisible(false)}
           addToDo={addToDo} />
       </Modal>
+      <Text style={AppStyles.header}>WELCOME!!!</Text>
+      <Text style={AppStyles.header}>Save your</Text>
       <Text style={AppStyles.header}>Links</Text>
       {auth.currentUser.emailVerified ? showContent() : showSendVerificationEmail()}
       <Image source={Logo} style={{width: 350, height: 800, marginBottom: 15, maxWidth: 400, maxHeight: 500, justifyContent: 'center'}} resizeMode="contain" />

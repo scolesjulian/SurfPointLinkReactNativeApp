@@ -2,12 +2,13 @@ import { View, Text, TextInput, Button, ImageBackground, KeyboardAvoidingView } 
 import React from 'react';
 import AppStyles from '../styles/AppStyles';
 
+
 export default function AddToDoModal(props) {
   const background = require("../assets/background.jpg");
   let [todo, setTodo] = React.useState("");
   return (
     <ImageBackground style={AppStyles.imageContainer} source={background}>
-    <Text style={AppStyles.header}>Add Link</Text>
+    <Text style={AppStyles.header}>Add you favorite Link</Text>
     <KeyboardAvoidingView 
         style={AppStyles.backgroundCover} 
         behavior={Platform.OS === "ios" ? "padding" : null}
@@ -20,6 +21,7 @@ export default function AddToDoModal(props) {
           placeholderTextColor="#BEBEBE"
           value={todo}
           onChangeText={setTodo} />
+      
       <View style={[AppStyles.rowContainer, AppStyles.rightAligned, AppStyles.rightMargin]}>
         <Button title="Cancel" color="#FF6B6B" onPress={props.onClose} />
         <Button title="OK" color="#6BCB77" onPress={() => {
