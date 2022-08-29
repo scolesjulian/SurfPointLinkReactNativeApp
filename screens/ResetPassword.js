@@ -1,5 +1,6 @@
-import { Text, View, TextInput, ImageBackground, Button, KeyboardAvoidingView, Platform } from 'react-native';
+import { Text, View, TextInput, ImageBackground, Image, Button, KeyboardAvoidingView, Platform } from 'react-native';
 import AppStyles from '../styles/AppStyles';
+import Logo from '../assets/Logo_1.png';
 import InlineTextButton from '../components/InlineTextButton';
 import React from 'react';
 import { auth } from "../firebase";
@@ -23,6 +24,7 @@ export default function ResetPassword({ navigation }) {
 
   return (
     <ImageBackground style={AppStyles.imageContainer} source={background}>
+    <Image source={Logo} style={{width: 100, height: 100, marginBottom: 15, maxWidth: 300, maxHeight: 200}} resizeMode="contain" />
       <KeyboardAvoidingView 
         style={AppStyles.backgroundCover} 
         behavior={Platform.OS === "ios" ? "padding" : null}

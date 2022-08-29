@@ -119,7 +119,7 @@ export default function ToDo({ navigation }) {
   return (
     <SafeAreaView>
       <View style={[AppStyles.rowContainer, AppStyles.rightAligned, AppStyles.rightMargin, AppStyles.topMargin]}>
-        <InlineTextButton text="Manage Account" color="#258ea6" onPress={() => navigation.navigate("ManageAccount")}/>
+        <InlineTextButton text="Manage Account" color="#258a" onPress={() => navigation.navigate("ManageAccount")}/>
       </View>
       <Modal
         animationType="slide"
@@ -130,7 +130,7 @@ export default function ToDo({ navigation }) {
           onClose={() => setModalVisible(false)}
           addToDo={addToDo} />
       </Modal>
-      <Text style={AppStyles.header}>WELCOME!!!</Text>
+      <Text style={AppStyles.header}>WELCOME!!!,</Text>
       <Text style={AppStyles.header}>Save your</Text>
       <Text style={AppStyles.header}>Links</Text>
       {auth.currentUser.emailVerified ? showContent() : showSendVerificationEmail()}

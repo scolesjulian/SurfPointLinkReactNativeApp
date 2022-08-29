@@ -91,13 +91,11 @@ export default function ManageAccount({ navigation }) {
           value={newPassword}
           secureTextEntry={true}
           onChangeText={setNewPassword} />
-      <Button title="Update Password" color="#6BCB77" onPress={updateUserPassword} />
-      <Button title="Delete User" color="#FF6B6B" onPress={deleteUserAndToDos} />
-      <Button title="Logout" onPress={logout} />
-      <Button title="Back to Links" onPress={() => navigation.pop()} />
+      <Button title="Update Password" color="#ADCF9F" onPress={updateUserPassword} />
+      <Button title="Delete User" color="#F37878" onPress={deleteUserAndToDos} />
+      <Button title="Logout" color="#f7b267" rightAligned="right" onPress={logout} />
+      <Button title="Back to Links" color="#F5EDDC" onPress={() => navigation.pop()} />
       </KeyboardAvoidingView>
-    
-    
     </ImageBackground>
   );
 }
