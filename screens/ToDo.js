@@ -10,6 +10,8 @@ import AddToDoModal from '../components/AddToDoModal';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 
 export default function ToDo({ navigation }) {
+  
+
   let [modalVisible, setModalVisible] = React.useState(false);
   let [isLoading, setIsLoading] = React.useState(true);
   let [isRefreshing, setIsRefreshing] = React.useState(false);
@@ -117,6 +119,7 @@ export default function ToDo({ navigation }) {
   };
   
   return (
+    
     <SafeAreaView>
       <View style={[AppStyles.rowContainer, AppStyles.rightAligned, AppStyles.rightMargin, AppStyles.topMargin]}>
         <InlineTextButton text="Manage Account" color="#258a" onPress={() => navigation.navigate("ManageAccount")}/>
@@ -136,5 +139,6 @@ export default function ToDo({ navigation }) {
       {auth.currentUser.emailVerified ? showContent() : showSendVerificationEmail()}
       <Image source={Logo} style={{width: 350, height: 800, marginBottom: 15, maxWidth: 400, maxHeight: 500, justifyContent: 'center'}} resizeMode="contain" />
     </SafeAreaView>
+    
   )
 }
