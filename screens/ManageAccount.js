@@ -93,8 +93,8 @@ export default function ManageAccount({ navigation }) {
           onChangeText={setNewPassword} />
       <Button title="Update Password" color="#ADCF9F" onPress={updateUserPassword} />
       <Button title="Delete User" color="#F37878" onPress={deleteUserAndToDos} />
-      <Button title="Logout" color="#f7b267" rightAligned="right" onPress={logout} />
-      <Button title="Back to Links" color="#F5EDDC" onPress={() => navigation.pop()} />
+      <Button  title="Logout" color="#000000" rightAligned="right" onPress={logout} />
+      <Button title="Back to Links" color="#000000" onPress={() => navigation.pop()} />
       </KeyboardAvoidingView>
     </ImageBackground>
   );
