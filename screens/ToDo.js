@@ -86,7 +86,7 @@ export default function ToDo({ navigation }) {
       <View>
         {isLoading ? <ActivityIndicator size="large" /> : showToDoList() }
         <Button 
-          title="Add Link" 
+          title="Add Surf Spot" 
           onPress={() => setModalVisible(true)} 
           color="#2e86ab" />
       </View>
@@ -135,7 +135,7 @@ export default function ToDo({ navigation }) {
       </Modal>
       <Text style={AppStyles.header}>WELCOME!!!,</Text>
       <Text style={AppStyles.header}>Save your</Text>
-      <Text style={AppStyles.header}>Links</Text>
+      <Text style={AppStyles.header}>favorite Spot</Text>
       {auth.currentUser.emailVerified ? showContent() : showSendVerificationEmail()}
       <Image source={Logo} style={{width: 350, height: 800, marginBottom: 15, maxWidth: 400, maxHeight: 500, justifyContent: 'center'}} resizeMode="contain" />
     </SafeAreaView>

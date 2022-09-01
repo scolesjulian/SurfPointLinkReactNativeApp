@@ -45,7 +45,7 @@ export default function Login({ navigation }) {
     <ImageBackground style={AppStyles.imageContainer} source={background}>
       <Image source={Logo} style={{width: 100, height: 100, marginBottom: 15, maxWidth: 300, maxHeight: 200}} resizeMode="contain" />
       <Text style={{fontSize: 24, fontWeight: "bold"}}>
-         Surf Point Link
+         Surf Point Spot
         </Text>
       <KeyboardAvoidingView 
         style={AppStyles.backgroundCover} 

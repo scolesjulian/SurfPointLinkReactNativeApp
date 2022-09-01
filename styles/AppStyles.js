@@ -88,7 +88,7 @@ export default styles = StyleSheet.create({
       padding: 8,
       borderBottomWidth: 2,
       marginVertical: 8,
-      color: 'black', 
+      color: "#FFFFFF", 
     },
     lightTextInput: {
       borderBottomColor: "#ffffff",
@@ -96,7 +96,7 @@ export default styles = StyleSheet.create({
     },
     
     inlineTextButton: {
-        color: "#87F1FF"
+        color: "#FFFFFF"
     },
     pressedInlineTextButton: {
         color: "#87F1FF",

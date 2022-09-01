@@ -10,7 +10,7 @@ export default function AddToDoModal(props) {
   return (
     <ImageBackground style={AppStyles.imageContainer} source={background}>
     <Image source={Logo} style={{width: 100, height: 100, marginBottom: 15, maxWidth: 300, maxHeight: 200}} resizeMode="contain" />
-    <Text style={AppStyles.header}>Add your favorite Link</Text>
+    <Text style={AppStyles.header}>Add your favorite Spot</Text>
     <KeyboardAvoidingView 
         style={AppStyles.backgroundCover} 
         behavior={Platform.OS === "ios" ? "padding" : null}
@@ -19,8 +19,8 @@ export default function AddToDoModal(props) {
       
       <TextInput 
           
-          placeholder='Link'
-          placeholderTextColor="#BEBEBE"
+          placeholder='Enter your Spot here...'
+          placeholderTextColor="#FFFFFF"
           value={todo}
           onChangeText={setTodo} />
 
